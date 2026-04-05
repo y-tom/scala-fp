@@ -12,8 +12,8 @@ object LoginService {
   def login(name: String, password: String): Either[LoginError, User] = {
     (name, password) match {
       case ("taro", "Password1") => Right(User(1, name, password))
-      case ("taro", _) => Left(InvalidPassword)
-      case (_, _) => Left(UserNotFound)
+      case ("taro", _)           => Left(InvalidPassword)
+      case (_, _)                => Left(UserNotFound)
     }
   }
 }

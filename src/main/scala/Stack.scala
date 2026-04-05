@@ -6,7 +6,8 @@ trait Stack[+T] {
 
 // --- 空ではない Stack の実装 ---
 class NonEmptyStack[+T](private val top: T, private val rest: Stack[T]) extends Stack[T] {
-  def push[E >: T](e: E): Stack[E] = new NonEmptyStack[E](e, this) // 再帰的に自分自身を呼び出し、新たに値をtopに置いたStackのインスタンスを作成
+  def push[E >: T](e: E): Stack[E] =
+    new NonEmptyStack[E](e, this) // 再帰的に自分自身を呼び出し、新たに値をtopに置いたStackのインスタンスを作成
   def pop: (T, Stack[T]) = (top, rest) // コンストラクタで渡されているtopの値と残りの値すべてが入ったrestをタプルで返す
   def isEmpty: Boolean = false
 }

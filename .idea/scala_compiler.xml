@@ -2,6 +2,24 @@
 <project version="4">
   <component name="ScalaCompilerConfiguration">
     <option name="separateProdTestSources" value="true" />
-    <profile name="sbt 1" modules="scala-fp,scala-fp.main,scala-fp.test" />
+    <profile name="sbt 1" modules="scala-fp" />
+    <profile name="sbt 2" modules="scala-fp.main">
+      <parameters>
+        <parameter value="-encoding" />
+        <parameter value="UTF-8" />
+        <parameter value="-Xsemanticdb" />
+        <parameter value="-semanticdb-target" />
+        <parameter value="C:\Users\Yukako\workspace\scala-fp\scala-fp\target\scala-3.8.2\meta" />
+      </parameters>
+    </profile>
+    <profile name="sbt 3" modules="scala-fp.test">
+      <parameters>
+        <parameter value="-encoding" />
+        <parameter value="UTF-8" />
+        <parameter value="-Xsemanticdb" />
+        <parameter value="-semanticdb-target" />
+        <parameter value="C:\Users\Yukako\workspace\scala-fp\scala-fp\target\scala-3.8.2\test-meta" />
+      </parameters>
+    </profile>
   </component>
 </project>

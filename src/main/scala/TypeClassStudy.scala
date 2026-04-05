@@ -9,12 +9,9 @@ object TypeClassStudy:
   object Rational:
     given RationalAdditive: Additive[Rational] with
       def plus(a: Rational, b: Rational): Rational =
-        if a == zero then
-          b
-        else if b == zero then
-          a
-        else
-          Rational(a.num * b.den + b.num * a.den, a.den * b.den)
+        if a == zero then b
+        else if b == zero then a
+        else Rational(a.num * b.den + b.num * a.den, a.den * b.den)
 
       def zero: Rational = Rational(0, 0)
 
